@@ -73,9 +73,7 @@ public class CustomDateSlider extends DateSlider {
      */
     @Override
     protected void setTitle() {
-        if (mTitleText != null) {
-            mTitleText.setText(getContext().getString(R.string.date_slider_title) +
+            setTitle(getContext().getString(R.string.date_slider_title) +
                     String.format(": %tA, %te/%tm/%ty", mTime, mTime, mTime, mTime));
-        }
     }
 }

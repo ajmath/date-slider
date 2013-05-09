@@ -65,10 +65,8 @@ public class MonthYearDateSlider extends DateSlider {
      */
     @Override
     protected void setTitle() {
-        if (mTitleText != null) {
-            mTitleText.setText(getContext().getString(R.string.date_slider_title) +
-                    String.format(": %tB %tY", mTime, mTime));
-        }
+        setTitle(getContext().getString(R.string.date_slider_title) +
+                String.format(": %tB %tY", mTime, mTime));
     }
 
 }

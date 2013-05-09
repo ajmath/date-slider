@@ -66,9 +66,7 @@ public class TimeSlider extends DateSlider {
      */
     @Override
     protected void setTitle() {
-        if (mTitleText != null) {
-            mTitleText.setText(String.format("Selected Time: %tR", mTime));
-        }
+       setTitle(String.format("Selected Time: %tR", mTime));
     }
 
 }

@@ -19,26 +19,24 @@
 
 package com.codeslap.dateslider;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.TimeZone;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public abstract class DateSlider extends Dialog {
 
     private final OnDateSetListener mOnDateSetListener;
     protected Calendar mTime;
     private TimeZone mTimeZone;
-    protected TextView mTitleText;
     final List<ScrollLayout> mScrollerList = new ArrayList<ScrollLayout>();
     private LinearLayout mLayout;
     private CharSequence mMessageContent;
@@ -65,11 +63,8 @@ public abstract class DateSlider extends Dialog {
             mTime.setTimeInMillis(time);
         }
 
-        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.date_slider);
-        getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.dialog_title);
 
-        mTitleText = (TextView) findViewById(R.id.date_slider_title_text);
         mLayout = (LinearLayout) findViewById(R.id.dateSliderMainLayout);
 
         Button okButton = (Button) findViewById(R.id.date_slider_ok_button);
@@ -184,10 +179,8 @@ public abstract class DateSlider extends Dialog {
      * This method sets the title of the dialog
      */
     void setTitle() {
-        if (mTitleText != null) {
-            mTitleText.setText(getContext().getString(R.string.date_slider_title) +
+            setTitle(getContext().getString(R.string.date_slider_title) +
                     String.format(": %te. %tB %tY", mTime, mTime, mTime));
-        }
     }
 
     long getRoundedTime() {
