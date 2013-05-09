@@ -1,46 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/dateSliderMainLayout"
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dateSliderMainLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
     <ScrollView
-            android:id="@+id/message_container"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingTop="2dip"
-            android:paddingBottom="12dip"
-            android:paddingLeft="14dip"
-            android:paddingRight="10dip">
+        android:id="@+id/message_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="12dip"
+        android:paddingLeft="14dip"
+        android:paddingRight="10dip"
+        android:paddingTop="2dip" >
+
         <TextView
-                android:id="@+id/message"
-                style="?android:attr/textAppearanceMedium"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dip"/>
-    </ScrollView>
-    <LinearLayout
-            android:id="@+id/sliders_container"
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
-    <LinearLayout
+            android:id="@+id/message"
+            style="?android:attr/textAppearanceMedium"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-        <Button
-                android:id="@+id/date_slider_ok_button"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:text="@string/set"/>
-        <Button android:id="@+id/date_slider_cancel_button"
-                android:layout_width="0dp"
-                android:layout_height="fill_parent"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:text="@string/cancel"/>
+            android:padding="5dip" />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/sliders_container"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <ImageButton
+            android:id="@+id/date_slider_ok_button"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:src="@drawable/ic_action_tick_gray"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/set" />
+
+        <ImageButton
+            android:id="@+id/date_slider_cancel_button"
+            android:layout_width="0dp"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:src="@drawable/ic_action_cancel"
+            android:background="@android:color/transparent"
+            android:contentDescription="@string/cancel" />
     </LinearLayout>
+
 </LinearLayout>
