@@ -41,7 +41,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginBottom="12dp"
             android:gravity="center"
-            android:src="@drawable/ic_action_tick_gray"
+            android:src="@drawable/ic_action_tick"
             android:background="@android:color/transparent"
             android:contentDescription="@string/set" />
 
