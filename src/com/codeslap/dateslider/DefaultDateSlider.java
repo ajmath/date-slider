@@ -35,7 +35,11 @@ public class DefaultDateSlider extends DateSlider {
      * @param calendar calendar set with the date that should appear at start up
      */
     public DefaultDateSlider(Context context, OnDateSetListener listener, Calendar calendar) {
-        super(context, listener, calendar);
+        super(context, null, listener, calendar);
+    }
+    
+    public DefaultDateSlider(Context context, String title, OnDateSetListener listener, Calendar calendar) {
+        super(context, title, listener, calendar);
     }
 
     /**

@@ -28,7 +28,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -41,13 +41,15 @@ public abstract class DateSlider extends Dialog {
     private LinearLayout mLayout;
     private CharSequence mMessageContent;
     private boolean mCancelButtonVisible = true;
+	private String mTitle;
 
-    public DateSlider(Context context, OnDateSetListener l, Calendar calendar) {
+    public DateSlider(Context context, String title, OnDateSetListener l, Calendar calendar) {
         super(context);
         this.mOnDateSetListener = l;
         mTimeZone = calendar.getTimeZone();
         mTime = Calendar.getInstance(mTimeZone);
         mTime.setTimeInMillis(calendar.getTimeInMillis());
+        mTitle = title;
     }
 
 
@@ -67,10 +69,10 @@ public abstract class DateSlider extends Dialog {
 
         mLayout = (LinearLayout) findViewById(R.id.dateSliderMainLayout);
 
-        Button okButton = (Button) findViewById(R.id.date_slider_ok_button);
+        ImageButton okButton = (ImageButton) findViewById(R.id.date_slider_ok_button);
         okButton.setOnClickListener(mOkButtonClickListener);
 
-        Button cancelButton = (Button) findViewById(R.id.date_slider_cancel_button);
+        ImageButton cancelButton = (ImageButton) findViewById(R.id.date_slider_cancel_button);
         cancelButton.setOnClickListener(mCancelButtonClickListener);
 
         arrangeScroller(null);
@@ -83,6 +85,10 @@ public abstract class DateSlider extends Dialog {
         }
 
         findViewById(R.id.date_slider_cancel_button).setVisibility(mCancelButtonVisible ? View.VISIBLE : View.GONE);
+        
+        if(mTitle != null) {
+        	super.setTitle(mTitle);
+        }
     }
 
     /**
@@ -271,5 +277,13 @@ public abstract class DateSlider extends Dialog {
             this.startTime = startTime;
             this.endTime = endTime;
         }
+    }
+    
+    
+    @Override
+    public void setTitle(CharSequence title) {
+    	if(mTitle == null) {
+    		super.setTitle(title);
+    	}
     }
 }

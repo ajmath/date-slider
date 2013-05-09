@@ -30,7 +30,11 @@ public class DateTimeSlider extends DateSlider {
     public static final int MINUTE_INTERVAL = 15;
 
     public DateTimeSlider(Context context, OnDateSetListener l, Calendar calendar) {
-        super(context, l, calendar);
+        super(context, null, l, calendar);
+    }
+    
+    public DateTimeSlider(Context context, String title, OnDateSetListener l, Calendar calendar) {
+        super(context, title, l, calendar);
     }
 
     /**

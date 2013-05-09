@@ -36,7 +36,11 @@ public class AlternativeDateSlider extends DateSlider {
      * @param calendar calendar set with the date that should appear at start up
      */
     public AlternativeDateSlider(Context context, OnDateSetListener listener, Calendar calendar) {
-        super(context, listener, calendar);
+        super(context, null, listener, calendar);
+    }
+    
+    public AlternativeDateSlider(Context context, String title, OnDateSetListener listener, Calendar calendar) {
+        super(context, title, listener, calendar);
     }
 
     /**

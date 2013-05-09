@@ -29,7 +29,11 @@ import java.util.Calendar;
 public class TimeSlider extends DateSlider {
 
     public TimeSlider(Context context, OnDateSetListener l, Calendar calendar) {
-        super(context, l, calendar);
+        super(context, null, l, calendar);
+    }
+    
+    public TimeSlider(Context context, String title, OnDateSetListener l, Calendar calendar) {
+        super(context, title, l, calendar);
     }
 
     /**

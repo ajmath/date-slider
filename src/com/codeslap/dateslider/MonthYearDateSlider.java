@@ -28,7 +28,11 @@ import java.util.Calendar;
 public class MonthYearDateSlider extends DateSlider {
 
     public MonthYearDateSlider(Context context, OnDateSetListener l, Calendar calendar) {
-        super(context, l, calendar);
+        super(context, null, l, calendar);
+    }
+    
+    public MonthYearDateSlider(Context context, String title, OnDateSetListener l, Calendar calendar) {
+        super(context, title, l, calendar);
     }
 
     /**
