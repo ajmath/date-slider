@@ -1,6 +1,9 @@
 group = 'org.matheeeny'
 version = '0.0.6-SNAPSHOT'
 
+task wrapper(type: Wrapper) {
+    gradleVersion = '1.6'
+}
 
 buildscript {
     repositories {
