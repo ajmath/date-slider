@@ -11,6 +11,3 @@ tmp
 gen-external-apklibs
 .classpath
 .project
-.gradle
-build/
-local.properties
